@@ -69,6 +69,7 @@ function CancelNote() {
   }
   saveNoteButton.addEventListener('click', SaveNote)
   
+  //Allows to read saved notes
   function NoteReading() {
     if (document.getElementById("add-new-note")){
       CancelNote()
@@ -82,6 +83,7 @@ function CancelNote() {
       readNote.innerHTML ='';
     }
 
+    //DarkMode Theme
     const themeToggle = document.querySelector('.theme-toggle')
     themeToggle.addEventListener('click', setDarktheme)
     

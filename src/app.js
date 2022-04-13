@@ -22,6 +22,7 @@ saveNoteButton.innerHTML = 'Save'
 const closeNoteButton = document.createElement('button')
 closeNoteButton.innerHTML = 'Close'
 
+//Note taking Area
 function NewNoteBox() {
 writeNote.insertAdjacentHTML('afterbegin', noteArea)
 writeNote.appendChild(saveNoteButton)
@@ -29,3 +30,16 @@ writeNote.appendChild(cancelNoteButton)
 newNoteButton.remove()
 }
 newNoteButton.addEventListener('click', NewNoteBox)
+
+//Cancel Note Button
+function CancelNote() {
+  cancelNoteButton.remove()
+  saveNoteButton.remove()
+  let node = document.getElementById("add-new-note");
+    if (node.parentNode) {
+      node.parentNode.removeChild(node)
+    }
+    createNote.appendChild(newNoteButton)
+  }
+  cancelNoteButton.addEventListener('click', CancelNote)
+  

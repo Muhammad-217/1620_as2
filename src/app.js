@@ -59,3 +59,25 @@ function CancelNote() {
       noteBody: bodytext,
       id: notes.length + 1 
     })
+    let li = document.createElement("li");
+    li.appendChild(document.createTextNode(title));
+    li.setAttribute("id", notes.length-1);
+    NotesList.appendChild(li);
+    li.addEventListener('click', NoteReading)
+    
+    CancelNote()
+  }
+  saveNoteButton.addEventListener('click', SaveNote)
+  
+  function NoteReading() {
+    if (document.getElementById("add-new-note")){
+      CancelNote()
+    }
+    readNote.innerHTML = '<div id="read-note"><h1>'+notes[this.id].title+'</h1><p>'+notes[this.id].noteBody+'<br></p></div>';
+    readNote.appendChild(closeNoteButton)
+    closeNoteButton.addEventListener('click', CancelNoteReading)
+    }
+    
+  function CancelNoteReading() {
+      readNote.innerHTML ='';
+    }

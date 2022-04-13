@@ -8,7 +8,7 @@
   --not-grey:  #393552;
   --muted:     #6e6a86;
   --hdr-hght:  5rem;
-  --lrg-txt:   2.2rem;
+  --lrg-txt:   2.5rem;
 }
 
 .light-theme {
@@ -17,9 +17,11 @@
   --text:     var(--not-black);
 }
 
-/* .dark-theme { */
-/*   --bg-color: var(--not-grey); */
-/* } */
+.dark-theme { 
+  --bg-color: var(--not-grey); 
+  --bg-side:  var(--muted);
+  --text:     var(--not-white);
+ } 
 
 * {
   margin: 0;
@@ -29,14 +31,16 @@
 }
 
 .main-container {
-  height: 100vh;
+  height:fit-content;
+  min-height: 100vh;
   display: flex;
   font-family: 'Quicksand', sans-serif;
 }
 
 .side-note-menu {
-  height: 100%;
-  width: 20rem;
+  min-height: 100vh;
+  max-height: fit-content;
+  width: 25rem;
   background-color: var(--bg-side);
 }
 
@@ -52,6 +56,7 @@
 }
 
 .side-nav span p {
+  font-family: 'Libre Baskerville', serif;
   font-size: var(--lrg-txt);
 }
 
@@ -79,6 +84,7 @@ header ul {
 header li {
   list-style: none;
   padding: var(--lrg-txt);
+  font-family: 'Libre Baskerville', serif;
 }
 
 header a {
@@ -94,7 +100,7 @@ header a {
 }
 
 .note-area {
-  width: 90%
+  width: 90%;
 }
 
 article {
@@ -104,7 +110,7 @@ article {
 .read-note-area p {
   font-family: 'Libre Baskerville', serif;
   color: var(--text);
-  font-size: 1.6rem;
+  font-size: 2rem;
 }
 
 i {
@@ -122,6 +128,8 @@ textarea {
   outline: none;
   resize: none;
   overflow: auto;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.2rem;
 }
 
 footer {
@@ -131,6 +139,49 @@ footer {
 }
 
 footer p {
+  font-family: 'Libre Baskerville', serif;
   color: var(--text);
   font-size: var(--lrg-txt);
+}
+
+h1 {
+  font-family: 'Libre Baskerville', serif;
+  color: var(--text);
+  font-size: 3rem;
+}
+
+button {
+  font-family: 'Libre Baskerville', serif;
+  color:  var(--bg-color);
+  background-color: var(--not-blue);
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  width: 100px;
+  display: inline-block;
+  font-weight: bold;
+}
+
+.notes-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style-type: none;
+}
+.notes-list li{
+  font-family:'Libre Baskerville', serif; 
+  font-size: 2em;
+  color: var(--text);
+}
+
+.theme-toggle{
+  background-color: var(--not-red);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  position: relative;
+  border-radius: 50px;
+  height: 26px;
+  width: 50px;
 }

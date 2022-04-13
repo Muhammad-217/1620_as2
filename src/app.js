@@ -43,3 +43,19 @@ function CancelNote() {
   }
   cancelNoteButton.addEventListener('click', CancelNote)
   
+  //Save Note Button
+  function SaveNote() {
+    let textarea = document.querySelector('#add-new-note').value
+    let title,bodytext;
+    if (textarea.indexOf("\n")!=-1) {
+      title = textarea.substr(0, textarea.indexOf("\n"));
+      bodytext = textarea.substr(textarea.indexOf("\n")+1);
+    } else {
+      title = textarea;
+      bodytext = "";
+    }
+    notes.push({ 
+      title: title, 
+      noteBody: bodytext,
+      id: notes.length + 1 
+    })

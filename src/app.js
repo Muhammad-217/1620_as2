@@ -81,3 +81,11 @@ function CancelNote() {
   function CancelNoteReading() {
       readNote.innerHTML ='';
     }
+
+    const themeToggle = document.querySelector('.theme-toggle')
+    themeToggle.addEventListener('click', setDarktheme)
+    
+  function setDarktheme() {
+      const DarkTheme = document.querySelector(".light-theme")
+      DarkTheme.classList.toggle("dark-theme")
+    }
